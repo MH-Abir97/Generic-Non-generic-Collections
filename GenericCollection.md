@@ -1,3 +1,4 @@
+https://dotnettutorials.net/lesson/object-oriented-programming-csharp/
 
 > # C# Generic & Non-generic Collections
 ## What is Collections ?
@@ -37,3 +38,12 @@ Hashtable :- A Hashtable in C# is a collection class that represents a collectio
 
 BitArray : - BitArray manages a compact array of bit values, which are represented as Booleans, where true indicates that the bit is on (1) and false indicates the bit is off (0).
 
+
+## Diffrence between Hastable and Hasset in C#
+
+ * Hashtable is used to store key-value pairs
+ *  HashSet is used to store a set of unique elements.
+
+ *  Hashtable is useful when you need to associate some data with a unique key.
+ 
+  *  HashSet is useful when you only need to store a set of unique elements without any associated values.
