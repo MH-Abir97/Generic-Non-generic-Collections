@@ -284,3 +284,81 @@ foreach(var student in result)
 
 ![Benjamin Bannekat](https://www.tutorialsteacher.com/Content/images/csharp/list.png).
 
+# C# - SortedList<TKey, TValue>
+
+> SortedList<TKey, TValue>, and SortedList are collection classes that can store key-value pairs that are sorted by the keys based on the associated IComparer implementation.
+
+ -> For example, if the keys are of primitive types, then sorted in ascending order of keys.
+
+ # SortedList Characteristics
+ * SortedList<TKey, TValue> is an array of key-value pairs sorted by keys.
+
+* Sorts elements as soon as they are added. Sorts primitive type keys in ascending order and object keys based on IComparer<T>.
+Comes under System.Collection.Generic namespace.
+
+* A key must be unique and cannot be null.
+A value can be null or duplicate.
+
+* A value can be accessed by passing associated key in the indexer mySortedList[key]
+Contains elements of type KeyValuePair<TKey, TValue>
+
+* It uses less memory than SortedDictionary<TKey,TValue>.
+
+* It is faster in the retrieval of data once sorted, whereas SortedDictionary<TKey, TValue> is faster in insertion and removing key-value pairs.
+
+ > ## Example: Create a SortedList and Add Elements
+
+ //SortedList of int keys, string values 
+
+
+SortedList<int, string> numberNames = new 
+
+SortedList<int, string> ();
+        
+            numberNames.Add(3, "One");
+            numberNames.Add(2, "Two");
+            numberNames.Add(1,"Test");
+            numberNames.Add(5, "One");
+             numberNames.Add(5, "One"); // Not 
+             Allowed
+
+            numberNames.Add(6,"Test"); // Allowed
+
+            foreach (var item in numberNames)
+            {
+                Console.WriteLine(item.Key+ " ~ 
+                " +item.Value);
+
+            }
+
+
+//Creating a SortedList of string keys, string values 
+//using collection-initializer syntax
+
+
+SortedList<string,string> cities = new 
+
+SortedList<string,string>()
+
+ {
+
+    {"London", "UK"},
+
+    {"New York", "USA"},
+
+    { "Mumbai", "India"},
+
+    {"Johannesburg", "South Africa"}
+   
+ }
+
+          foreach(var item in cities)
+
+            {
+                Console.WriteLine(item.Key + " ~ 
+                " + item.Value);
+            }
+
+# SortedList Class Hierarchy        
+
+![Benjamin Bannekat](https://www.tutorialsteacher.com/Content/images/csharp/sortedlist-generic.png).
