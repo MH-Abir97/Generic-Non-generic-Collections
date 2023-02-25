@@ -548,3 +548,48 @@ foreach (var item in myStack)
             {
                 Console.WriteLine(item);
             }
+
+# C# - Queue< T >
+-> Queue is a special type of collection that stores the elements in FIFO style (First In First Out), exactly opposite of the Stack<T> collection.
+
+It contains the elements in the order they were added. C# includes generic Queue<T> and non-generic Queue collection. It is recommended to use the generic Queue<T> collection.
+
+## Queue< T > Characteristics
+
+* Queue<T> is FIFO (First In First Out) collection.
+* It comes under System.Collection.Generic namespace.
+* Queue<T> can contain elements of the specified type. It provides compile-time type checking and doesn't perform boxing-unboxing because it is generic.
+
+* Elements can be added using the Enqueue() method. Cannot use collection-initializer syntax.
+* Elements can be retrieved using the Dequeue() and the Peek() methods. It does not support an indexer.
+
+![Benjamin Bannekat](https://www.tutorialsteacher.com/Content/images/csharp/csharp-queue.png).
+
+# Creating a Queue
+
+
+Queue<int> callerIds = new Queue<int>();
+
+callerIds.Enqueue(1);
+
+callerIds.Enqueue(2);
+
+callerIds.Enqueue(3);
+
+callerIds.Enqueue(4);
+
+ foreach(var id in callerIds)
+
+    Console.Write(id); //prints 1234
+
+     int[] queeArray = new int[] { 1, 2, 3, 45, 7 };
+
+     Queue<int> quee = new Queue<int>(queeArray);
+
+            foreach (var item in quee)
+
+            {
+
+                Console.WriteLine(item);
+
+            }
