@@ -406,7 +406,145 @@ var cities = new Dictionary<string, string>()
 	{"India", "Mumbai, New Delhi, Pune"}
 
 };
+
 		
 foreach(var kvp in cities)
 
     Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);
+
+
+foreach (KeyValuePair<string, string> author in 
+cities1)
+
+            {
+
+                Console.WriteLine("Key: {0}, Value: {1}
+                ", author.Key, author.Value);
+
+            }
+
+
+![Benjamin Bannekat](https://www.tutorialsteacher.com/Content/images/csharp/generic-dictionary.png).
+
+# C# - Hashtable
+
+-> The Hashtable is a non-generic collection that stores key-value pairs, similar to generic Dictionary<TKey, TValue> collection. It optimizes lookups by computing the hash code of each key and stores it in a different bucket internally and then matches the hash code of the specified key at the time of accessing values.
+
+
+## Hashtable Characteristics
+
+* Hashtable stores key-value pairs.
+* Comes under System.Collections namespace.
+* Implements IDictionary interface.
+* Keys must be unique and cannot be null.
+* Values can be null or duplicate.
+* Values can be accessed by passing associated key in  the indexer e.g. myHashtable[key]
+* Elements are stored as DictionaryEntry objects.
+
+# Creating a Hashtable
+
+ Hashtable numberNames2 = new Hashtable();
+ 
+            numberNames2.Add(1, "One"); //adding a key/value using the Add() method
+            numberNames2.Add(2, "Two");
+            numberNames2.Add(3, "Three");
+
+            //The following throws run-time exception: key already added.
+            //numberNames.Add(3, "Three"); 
+
+            foreach (DictionaryEntry de in numberNames2)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", de.Key, de.Value);
+            }
+
+//creating a Hashtable using collection-initializer syntax
+
+var cities6 = new Hashtable(){
+
+                    {"UK", "London, Manchester, 
+                    Birmingham"},
+
+                    {"USA", "Chicago, New York, 
+                    Washington"},
+
+                    {"India", "Mumbai, New Delhi, 
+                    Pune"}
+
+            };
+
+            foreach (DictionaryEntry de in cities6)
+            {
+
+             Console.WriteLine("Key: {0}, Value: {1}", de.Key,
+                  de.Value);
+
+            }
+
+
+> Example: Add Dictionary in Hashtable
+
+ Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            dict.Add(1, "one");
+
+            dict.Add(2, "two");
+
+            dict.Add(3, "three");
+
+     Hashtable ht = new Hashtable(dict);
+
+
+    foreach (DictionaryEntry de in ht)
+        {
+
+    // Console.WriteLine("Total elements: {0}", ht. Count);
+
+    Console.WriteLine("Key: {0}, Value: {1}", de.Key, de.Value);
+
+            }
+
+![Benjamin Bannekat](https://www.tutorialsteacher.com/Content/images/csharp/hashtable.png).
+
+# C# - Stack< T >
+
+
+-> Stack is a special type of collection that stores elements in LIFO style (Last In First Out). C# includes the generic Stack<T> and non-generic Stack collection classes. It is recommended to use the generic Stack<T> collection.
+
+Stack is useful to store temporary data in LIFO style, and you might want to delete an element after retrieving its value.
+
+# Stack< T > Characteristics
+
+* Stack<T> is Last In First Out collection.
+* It comes under System.Collection.Generic namespace.
+* Stack<T> can contain elements of the specified type. It provides compile-time type checking and doesn't perform boxing-unboxing because it is generic.
+* Elements can be added using the Push() method. Cannot use collection-initializer syntax.
+
+* Elements can be retrieved using the Pop() and the Peek() methods. It does not support an indexer.
+
+# Creating a Stack
+
+Stack<int> myStack = new Stack<int>();
+
+myStack.Push(1);
+
+myStack.Push(2);
+
+myStack.Push(3);
+
+myStack.Push(4);
+
+foreach (var item in myStack)
+
+     Console.Write(item + ","); //prints 4,3,2,1, 
+
+
+
+    int[] arr = new int[] { 1, 2, 3, 4 };
+
+        Stack<int> s1 = new Stack<int>(arr);
+             
+           
+            foreach (var item in s1)
+            {
+                Console.WriteLine(item);
+            }
